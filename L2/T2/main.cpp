@@ -6,20 +6,17 @@ class Counter
     private:
         int cntr;
     public:
+        Counter() { cntr = 1; }
+        Counter(int cntr) { this->cntr = cntr; }
         void increase() {
             cntr++;
         }
         void reduce() {
             cntr--;
         }
-        void show_result() const {
-            cout << cntr << endl;
+        int show_result() const {
+            return cntr;
         }
-        void SetInitialValue(int input) {
-            cntr = input;
-        }
-
-
 };
 
 int main()
@@ -35,11 +32,11 @@ int main()
         if(char_input == 'Y' || char_input == 'y') {
             cout << "Enter initial value: ";
             cin >> int_input;
-            counter.SetInitialValue(int_input);
+            counter = Counter(int_input);
             crct = true;
         } else {
             if(char_input == 'N' || char_input == 'n'){
-                counter.SetInitialValue(0);
+                counter = Counter();
                 crct = true;
             } else {
                 cout << "Don't undrstend Y/N? : ";
@@ -60,7 +57,7 @@ int main()
             counter.reduce();
             break;
         case '=':
-            counter.show_result();
+            cout << counter.show_result() << endl;
             break;        
         case 'x':
             break;

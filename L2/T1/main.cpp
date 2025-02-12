@@ -3,8 +3,9 @@ using namespace std;
 
 class Calculator
 {
-public:
+private:
 double num1, num2;
+public:
 bool set_num1(double num1) {
     if(num1 != 0) {
         this->num1 = num1;
@@ -26,27 +27,21 @@ bool set_num2(double num2) {
     }
 };
 double add() const {
-    cout << "num1 + num2 = ";
     return (num1 + num2);
 };
 double multiply() const {
-    cout << "num1 x num2 = ";
     return (num1 * num2);
 };
 double subtract_1_2() const {
-    cout << "num1 - num2 = ";
     return (num1 - num2);
 };
 double subtract_2_1() const {
-    cout << "num2 - num1 = ";
     return (num2 - num1);
 };
 double divide_1_2() const {
-    cout << "num1 / num2 = ";
     return (num1 / num2);
 };
 double divide_2_1() const {
-    cout << "num2 / num1 = ";
     return (num2 / num1);
 };
 };
@@ -56,7 +51,7 @@ int main()
     double num1, num2;
     Calculator CALC;
 
-    while(int i = 0 != 1)
+    while(true)
     {
         do {
             cout << "Enter num1: ";
@@ -69,12 +64,12 @@ int main()
         } while (!CALC.set_num2(num2));
         
         
-        cout << CALC.add() << endl;
-        cout << CALC.subtract_1_2() << endl;
-        cout << CALC.subtract_2_1() << endl;
-        cout << CALC.multiply() << endl;
-        cout << CALC.divide_1_2() << endl;
-        cout << CALC.divide_2_1() << endl;
+        cout << "num1 + num2 = " << CALC.add() << endl;
+        cout << "num1 - num2 = " << CALC.subtract_1_2() << endl;
+        cout << "num2 - num1 = " << CALC.subtract_2_1() << endl;
+        cout << "num1 x num2 = " << CALC.multiply() << endl;
+        cout << "num1 / num2 = " << CALC.divide_1_2() << endl;
+        cout << "num2 / num1 = " << CALC.divide_2_1() << endl;
                 
     }
 }
