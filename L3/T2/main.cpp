@@ -4,15 +4,15 @@
 using namespace std;
 
 
-class ADDRES_LIST
+class AddressList
 {
 	string city;
 	string street;
 	string house_number;
 	string room_number;
 public:
-	ADDRES_LIST() {};
-	ADDRES_LIST(string city, string street, string house_number, string room_number)
+	AddressList() {};
+	AddressList(string city, string street, string house_number, string room_number)
 		: city(city), street(street), house_number(house_number), room_number(room_number) {};
 
 	string get_city() const { return city; }
@@ -21,15 +21,15 @@ public:
 	string get_room_number() const { return room_number; }
 };
 
-void plase_switch(ADDRES_LIST& pointBIG, ADDRES_LIST& pointSMALL)
+void plase_switch(AddressList& pointBIG, AddressList& pointSMALL)
 {
-	ADDRES_LIST buff;
+	AddressList buff;
 	buff = pointBIG;
 	pointBIG = pointSMALL;
 	pointSMALL = buff;
 }
 
-void Sorter(ADDRES_LIST* point,const int NumberOfAddreses)
+void Sorter(AddressList* point,const int NumberOfAddreses)
 {
 	bool changes;
 	do {
@@ -49,14 +49,14 @@ int main()
 	if (inputF.is_open()) {
 		int NumberOfAddreses;
 		inputF >> NumberOfAddreses;
-		ADDRES_LIST* point = new ADDRES_LIST[NumberOfAddreses];
+		AddressList* point = new AddressList[NumberOfAddreses];
 		for (int i = 0; i < NumberOfAddreses; i++) {
 			string city, street, house_number, room_number;
 			inputF >> city;
 			inputF >> street;
 			inputF >> house_number;
 			inputF >> room_number;
-			point[i] = ADDRES_LIST(city, street, house_number, room_number);
+			point[i] = AddressList(city, street, house_number, room_number);
 		}
 		inputF.close();
 
