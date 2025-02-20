@@ -1,0 +1,13 @@
+# Игнорировать все
+*
+
+# Но не игнорировать файлы и папки в корне проекта
+!*/
+!.gitignore
+!*.sln
+!*.vcxproj
+!*.vcxproj.filters
+!*.vcxproj.user
+!*.txt
+!*.cpp
+!*.git/
