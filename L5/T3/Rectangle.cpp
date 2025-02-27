@@ -1,0 +1,9 @@
+#include "Figure.h"
+#include "Quadrangle.h"
+#include "Parallelogram.h"
+#include "Rectangle.h"
+
+Rectangle::Rectangle(unsigned a, unsigned b) :
+	Parallelogram(a, b, 90, 90) {
+	name = "Rectangle";
+};
