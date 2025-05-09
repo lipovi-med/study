@@ -1,16 +1,90 @@
-# Игнорировать все
+# Игнорировать все файлы и папки по умолчанию
 *
 
-# Но не игнорировать файлы и папки в корне проекта
+# Но не игнорировать папки в корне (чтобы можно было заходить внутрь)
 !*/
+
+# Исключения — не игнорировать важные файлы и папки
+
+# Git и документация
 !.gitignore
+!*.git/
+!*.md
+!*.txt
+
+# Исходники и заголовки
+!*.cpp
+!*.h
+!*.hpp
+
+# Файлы CMakeLists и cmake модули
+!CMakeLists.txt
+!*.cmake
+
+# Файлы Visual Studio проекта
 !*.sln
 !*.vcxproj
 !*.vcxproj.filters
 !*.vcxproj.user
-!*.txt
-!*.cpp
-!*.git/
-!*.md
-!*.h
-!*.hpp
+
+# Игнорировать временные и промежуточные файлы Visual Studio и сборки:
+
+# Папки Debug, Release, x64 и т.п. (обычно не в корне, но на всякий случай)
+Debug/
+Release/
+x64/
+x86/
+bin/
+obj/
+
+# Файлы Visual Studio временные и объектные
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+*.ilk
+*.meta
+*.obj
+*.iobj
+*.pch
+*.pdb
+*.ipdb
+*.pgc
+*.pgd
+*.rsp
+*.sbr
+*.tlh
+*.tli
+*.tmp
+*.tmp_proj
+*.log
+*.vspscc
+*_i.c
+*_p.c
+*.ncb
+*.sdf
+*.cachefile
+*.dbmdl
+*.VC.db
+*.VC.VC.opendb
+
+# CMake артефакты сборки
+CMakeFiles/
+CMakeCache.txt
+cmake_install.cmake
+install_manifest.txt
+Makefile
+out/
+
+
+# Тестовые результаты и профайлер
+TestResults/
+*.psess
+*.vsp
+*.vspx
+*.sap
+*.coverage
+*.coveragexml
+
+# VS Code
+.vscode/
