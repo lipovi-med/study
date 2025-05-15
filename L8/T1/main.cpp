@@ -1,4 +1,7 @@
 #include <iostream>
+#include <cmath>
+
+const float EPSILON = std::numeric_limits<float>::epsilon();
 
 class Fraction
 {
@@ -6,16 +9,20 @@ private:
     int numerator_;
     int denominator_;
 
+    float devision() {
+        return static_cast<float>(numerator_) / static_cast<float>(denominator_);
+    }
+    bool equal(float x, float y) {
+        return fabs(x - y) < EPSILON;
+    }
+
 public:
     Fraction(int numerator, int denominator) {
         numerator_ = numerator;
         denominator_ = denominator;
     }
-    float devision() {
-        return numerator_ / denominator_;
-    }
     bool operator==(Fraction other) {
-        return devision() == other.devision();
+        return equal(devision(), other.devision());
     }
     bool operator!=(Fraction other) {
         return !(*this == other);
